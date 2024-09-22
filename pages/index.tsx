@@ -1,14 +1,7 @@
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { parseAbi } from "viem";
 import { useAccount, useReadContracts } from "wagmi";
 
-import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
 import useToken from "@/hooks/useToken";
 import liquidityPoolAbi from "@/hooks/abi/LiquidityPoolAbi";
@@ -71,36 +64,7 @@ export default function IndexPage() {
           <div className={subtitle({ class: "mt-4" })}>ADV/SEN</div>
         </div>
 
-        <div className="flex gap-3">
-          <Link
-            isExternal
-            className={buttonStyles({
-              color: "primary",
-              radius: "full",
-              variant: "shadow",
-            })}
-            href={siteConfig.links.docs}
-          >
-            Documentation
-          </Link>
-          <Link
-            isExternal
-            className={buttonStyles({ variant: "bordered", radius: "full" })}
-            href={siteConfig.links.github}
-          >
-            <GithubIcon size={20} />
-            GitHub
-          </Link>
-        </div>
-
-        <div className="mt-8">
-          <Snippet hideCopyButton hideSymbol variant="bordered">
-            <span>
-              Get started by editing{" "}
-              <Code color="primary">pages/index.tsx</Code>
-            </span>
-          </Snippet>
-        </div>
+        <div className="flex gap-3 border-1" />
       </section>
     </DefaultLayout>
   );
